@@ -24,7 +24,9 @@
 
 ## 安装
 
-把整个目录放到 Claude Code 的 skills 目录：
+把整个目录放到 AI 助手的 skills 目录（二选一或都装，Skill 结构两者通用）：
+
+### Claude Code
 
 ```bash
 # Windows（目录联接，推荐，方便持续维护）
@@ -32,11 +34,29 @@ cmd /c mklink /J "C:\Users\<你>\.claude\skills\WorkBuddy-opc-exam-prep" "<本�
 
 # macOS / Linux
 ln -s "<本仓库路径>" ~/.claude/skills/WorkBuddy-opc-exam-prep
-
-# 或直接复制整个目录到 ~/.claude/skills/ 下
 ```
 
-然后在 Claude Code 中输入 `/WorkBuddy-opc-exam-prep` 开始练习。错题和进度会写入 `wrongbook.md` / `progress.md`（已 gitignore，不会污染仓库）。
+使用：在 Claude Code 中输入 `/WorkBuddy-opc-exam-prep` 唤起。
+
+### OpenClaw
+
+```bash
+# Windows（全局安装，目录联接）
+cmd /c mklink /J "C:\Users\<你>\.openclaw\skills\WorkBuddy-opc-exam-prep" "<本仓库路径>"
+
+# macOS / Linux（全局安装）
+ln -s "<本仓库路径>" ~/.openclaw/skills/WorkBuddy-opc-exam-prep
+
+# 或只装到某个工作区：放到 <workspace>/skills/ 下
+```
+
+使用：在 OpenClaw 对话中让助手使用 `WorkBuddy-opc-exam-prep` skill。
+
+### 通用方式
+
+也可以直接把整个目录复制到上述任一 skills 目录下（不便于后续 git 同步更新）。
+
+练习产生的错题和进度会写入 `wrongbook.md` / `progress.md`（已 gitignore，不会污染仓库）。
 
 ## 制作方法（如果你想做自己的备考 Skill）
 
