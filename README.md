@@ -22,39 +22,31 @@
 
 课程章节：01 产品基础｜02 任务创建｜03 助理连接｜04 技能｜05 连接器｜06 灵感｜07 资料库｜08 自动化｜09 专家中心与模型配置｜10 办公场景｜11 OPC 概念与专家团
 
-## 安装
+## 安装方式
 
-把整个目录放到 AI 助手的 skills 目录（二选一或都装，Skill 结构两者通用）：
+### 直接让 Agent 安装
 
-### Claude Code
+在 Claude Code、Codex 等支持 Agent Skills 的工具里，直接发送指令：
 
-```bash
-# Windows（目录联接，推荐，方便持续维护）
-cmd /c mklink /J "C:\Users\<你>\.claude\skills\WorkBuddy-opc-exam-prep" "<本仓库路径>"
-
-# macOS / Linux
-ln -s "<本仓库路径>" ~/.claude/skills/WorkBuddy-opc-exam-prep
+```plaintext
+帮我安装这个 skill：https://github.com/muzhi-tech/WorkBuddy-opc-exam-prep
 ```
 
-使用：在 Claude Code 中输入 `/WorkBuddy-opc-exam-prep` 唤起。
-
-### OpenClaw
+### 手动安装
 
 ```bash
-# Windows（全局安装，目录联接）
-cmd /c mklink /J "C:\Users\<你>\.openclaw\skills\WorkBuddy-opc-exam-prep" "<本仓库路径>"
+git clone https://github.com/muzhi-tech/WorkBuddy-opc-exam-prep.git
 
-# macOS / Linux（全局安装）
-ln -s "<本仓库路径>" ~/.openclaw/skills/WorkBuddy-opc-exam-prep
+# Codex
+mkdir -p ~/.codex/skills
+cp -R WorkBuddy-opc-exam-prep ~/.codex/skills/
 
-# 或只装到某个工作区：放到 <workspace>/skills/ 下
+# Claude Code
+mkdir -p ~/.claude/skills
+cp -R WorkBuddy-opc-exam-prep ~/.claude/skills/
 ```
 
-使用：在 OpenClaw 对话中让助手使用 `WorkBuddy-opc-exam-prep` skill。
-
-### 通用方式
-
-也可以直接把整个目录复制到上述任一 skills 目录下（不便于后续 git 同步更新）。
+如果你的 Agent 暂时不支持 Skill 安装，也可以把项目内的 SKILL.md 和它引用的资源放进项目，让 Agent 按照其中的流程执行。
 
 练习产生的错题和进度会写入 `wrongbook.md` / `progress.md`（已 gitignore，不会污染仓库）。
 
