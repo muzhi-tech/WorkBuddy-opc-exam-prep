@@ -1,0 +1,18 @@
+# 课程逐字稿（腾讯云版权内容，不发布）
+source/
+
+# 个人练习记录（不发布）
+wrongbook.md
+progress.md
+
+# 系统文件
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# AI 本地配置
+.claude/
